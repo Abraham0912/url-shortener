@@ -49,9 +49,13 @@ class LinksController < ApplicationController
     @link = Link.find_by_code(params[:code])
     @link.update(count:@link.count+1)
     
+    # p "==========================> #{request.remote_ip}"
+    # p "===============++++===========> #{request.user_agent}"
+    user_agent = UserAgent.parse(request.user_agent)
+    View.create(ip_adress: request.remote_ip, browser: user_agent.browser, os: user_agent.platform, link_id: @link.id, created_at:Time.zone.now.to_datetime)
+    
     redirect_to @link.url
   end
-  
 
   private
     def set_link

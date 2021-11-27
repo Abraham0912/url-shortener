@@ -1,5 +1,6 @@
 class Link < ApplicationRecord
   belongs_to :user
+  has_many :views
 
   validates_presence_of :url
   validates :url, format: URI::regexp(%w[http https])
