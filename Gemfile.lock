@@ -163,6 +163,7 @@ GEM
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    useragent (0.16.10)
     warden (1.2.9)
       rack (>= 2.0.9)
     warden-jwt_auth (0.6.0)
@@ -190,6 +191,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   spring
   tzinfo-data
+  useragent
 
 RUBY VERSION
    ruby 3.0.2p107
