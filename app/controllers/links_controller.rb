@@ -46,8 +46,9 @@ class LinksController < ApplicationController
   end
 
   def redirect
-    @link = Link.find_by_code(params[:code]) 
-    # render json: {message: "Estas en method xd"}
+    @link = Link.find_by_code(params[:code])
+    @link.update(count:@link.count+1)
+    
     redirect_to @link.url
   end
   
